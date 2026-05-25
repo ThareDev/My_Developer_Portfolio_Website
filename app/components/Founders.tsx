@@ -230,7 +230,7 @@ export default function Founders() {
             <span className="bg-gradient-to-r from-[#00E5CC] via-[#7B61FF] to-[#00C2FF] bg-clip-text text-transparent">Founders</span>
           </h2>
           <p className="max-w-[480px] mx-auto text-[#4A6080] font-light text-[clamp(0.875rem,2vw,1rem)]">
-            Two builders who've been in the trenches — and came back to create something different.
+            Two builders who&apos;ve been in the trenches — and came back to create something different.
           </p>
         </div>
 
@@ -246,9 +246,9 @@ export default function Founders() {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-[#00E5CC]/[0.03] to-[#7B61FF]/[0.03]" />
           <div className="relative">
-            <div className="text-4xl text-[#00E5CC]/20 font-mono mb-4">"</div>
+            <div className="text-4xl text-[#00E5CC]/20 font-mono mb-4">&ldquo;</div>
             <p className="text-[#6A8AAA] text-base sm:text-lg font-light leading-relaxed max-w-[560px] mx-auto italic">
-              We started Zer0xLabs because we were tired of software that worked but didn't sing. Every product we ship should feel inevitable.
+              We started Zer0xLabs because we were tired of software that worked but didn&apos;t sing. Every product we ship should feel inevitable.
             </p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <div className="flex -space-x-2">
@@ -262,7 +262,7 @@ export default function Founders() {
                   </div>
                 ))}
               </div>
-              <span className="text-[#2A4060] font-mono text-xs tracking-wide">Tharaka & Chathil</span>
+              <span className="text-[#2A4060] font-mono text-xs tracking-wide">Alex & Priya</span>
             </div>
           </div>
         </div>

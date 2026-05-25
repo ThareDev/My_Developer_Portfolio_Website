@@ -208,7 +208,7 @@ export default function Projects() {
             Selected Work
           </div>
           <h2 className="font-bold leading-tight text-[clamp(2rem,6vw,3.5rem)] mb-4">
-            <span className="text-[#E0EFFF]">Products We're </span>
+            <span className="text-[#E0EFFF]">Products We&apos;re </span>
             <span className="bg-gradient-to-r from-[#00E5CC] via-[#7B61FF] to-[#00C2FF] bg-clip-text text-transparent">Proud Of</span>
           </h2>
           <p className="max-w-[480px] mx-auto text-[#4A6080] font-light text-[clamp(0.875rem,2vw,1rem)]">

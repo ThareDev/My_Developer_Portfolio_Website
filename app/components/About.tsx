@@ -52,10 +52,10 @@ export default function About() {
               <span className="bg-gradient-to-r from-[#00E5CC] to-[#7B61FF] bg-clip-text text-transparent">Craft</span>
             </h2>
             <p className="text-[#4A6080] leading-relaxed font-light mb-5 text-[clamp(0.875rem,2vw,1rem)]">
-              Zer0xLabs is an elite software studio founded on one belief: exceptional products demand exceptional people. Since 2016, we've been building digital products for startups, scale-ups, and enterprise teams who refuse to settle.
+              Zer0xLabs is an elite software studio founded on one belief: exceptional products demand exceptional people. Since 2016, we&apos;ve been building digital products for startups, scale-ups, and enterprise teams who refuse to settle.
             </p>
             <p className="text-[#4A6080] leading-relaxed font-light text-[clamp(0.875rem,2vw,1rem)]">
-              We're a lean team of 35+ engineers, designers, and AI specialists — operating with the agility of a startup and the rigour of an agency that's shipped over 120 products worldwide.
+              We&apos;re a lean team of 35+ engineers, designers, and AI specialists — operating with the agility of a startup and the rigour of an agency that&apos;s shipped over 120 products worldwide.
             </p>
 
             {/* Inline stat strip */}
