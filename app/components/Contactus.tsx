@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import logo from "@/public/logo.png";
 
 const BUDGETS = ["< $10k", "$10–30k", "$30–80k", "$80k+"];
 const SERVICES = ["Web Dev", "Mobile App", "AI Integration", "Admin Panel", "Software Dev", "Other"];
@@ -83,7 +85,7 @@ export default function Contact() {
               {/* Name + Email */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { key: "name",  label: "Full Name",     placeholder: "Alex Johnson" },
+                  { key: "name", label: "Full Name", placeholder: "Alex Johnson" },
                   { key: "email", label: "Email Address", placeholder: "alex@company.com" },
                 ].map(f => (
                   <div key={f.key} className="flex flex-col gap-2">
@@ -193,8 +195,8 @@ export default function Contact() {
         >
           {[
             { icon: "◎", label: "Response Time", value: "< 24 hours" },
-            { icon: "◈", label: "First Call",    value: "Free of charge" },
-            { icon: "⬡", label: "NDA",           value: "Signed on request" },
+            { icon: "◈", label: "First Call", value: "Free of charge" },
+            { icon: "⬡", label: "NDA", value: "Signed on request" },
           ].map(item => (
             <div key={item.label} className="flex items-center gap-3 rounded-xl border border-white/[0.05] bg-white/[0.015] px-4 py-3">
               <span className="text-[#00E5CC] text-lg">{item.icon}</span>
@@ -208,10 +210,16 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
+      {/* Footer */}
       <div className="relative mt-20 sm:mt-28 border-t border-[#00E5CC]/[0.08] pt-8 text-center">
-        <div className="flex items-center justify-center gap-2 font-mono text-sm tracking-wider mb-3">
-          <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#00E5CC] to-[#7B61FF] grid place-items-center text-[10px] font-bold text-[#030A10]">Z</div>
-          <span className="text-[#2A4060]">Zer<span className="text-[#00E5CC]">0x</span>Labs</span>
+        <div className="flex items-center justify-center mb-3">
+          <Image
+            src={logo}
+            alt="Zer0xLabs"
+            width={140}
+            height={48}
+            className="object-contain"
+          />
         </div>
         <p className="text-[#1A2D40] font-mono text-[10px] tracking-widest">
           © {new Date().getFullYear()} Ravana Tech Solutions. All rights reserved.

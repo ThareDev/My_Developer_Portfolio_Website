@@ -2,20 +2,20 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Zer0xLabs",
-  description: "Zer0xLabs — Elite software studio building pixel-perfect web apps, mobile experiences, AI integrations, and scalable backends for clients worldwide.",
-  keywords: "Zer0xLabs, software studio, web development, mobile apps, AI integration, Next.js, React, software engineering",
+  title: "Ravana Tech Solutions",
+  description: "Ravana Tech Solutions — Elite software studio building pixel-perfect web apps, mobile experiences, AI integrations, and scalable backends for clients worldwide.",
+  keywords: "Ravana Tech Solutions, software studio, web development, mobile apps, AI integration, Next.js, React, software engineering",
   openGraph: {
-    title: "Zer0xLabs — We Build Digital Experiences",
+    title: "Ravana Tech Solutions — We Build Digital Experiences",
     description: "Pixel-perfect web interfaces, AI-powered backends, mobile apps, and admin systems — technology that scales.",
-    url: "https://zer0xlabs.com",
-    siteName: "Zer0xLabs",
+    url: "https://ravanatechsolutions.com",
+    siteName: "Ravana Tech Solutions",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zer0xLabs — We Build Digital Experiences",
+    title: "Ravana Tech Solutions — We Build Digital Experiences",
     description: "Elite software studio. Web · Mobile · AI · Admin Systems.",
   },
 };
