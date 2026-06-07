@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import ravanaLogo from "@/public/logo.png";
 
 const PILLARS = [
   { icon: "◈", title: "Precision Engineering", desc: "Every component we ship is built to spec — no shortcuts, no tech debt." },
@@ -52,15 +54,15 @@ export default function About() {
               <span className="bg-gradient-to-r from-[#00E5CC] to-[#7B61FF] bg-clip-text text-transparent">Craft</span>
             </h2>
             <p className="text-[#4A6080] leading-relaxed font-light mb-5 text-[clamp(0.875rem,2vw,1rem)]">
-              Zer0xLabs is an elite software studio founded on one belief: exceptional products demand exceptional people. Since 2016, we&apos;ve been building digital products for startups, scale-ups, and enterprise teams who refuse to settle.
+              Ravana Tech Solutions is an elite software studio founded on one belief: exceptional products demand exceptional people. Since 2022, we&apos;ve been building digital products for startups, scale-ups, and enterprise teams who refuse to settle.
             </p>
             <p className="text-[#4A6080] leading-relaxed font-light text-[clamp(0.875rem,2vw,1rem)]">
-              We&apos;re a lean team of 35+ engineers, designers, and AI specialists — operating with the agility of a startup and the rigour of an agency that&apos;s shipped over 120 products worldwide.
+              We&apos;re a lean team of 10+ engineers, designers, and AI specialists — operating with the agility of a startup and the rigour of an agency that&apos;s shipped over 10 products worldwide.
             </p>
 
             {/* Inline stat strip */}
             <div className="flex gap-8 mt-10">
-              {[["2016", "Founded"], ["35+", "Specialists"], ["12", "Countries"]].map(([n, l]) => (
+              {[["2022", "Founded"], ["10+", "Specialists"], ["3", "Countries"]].map(([n, l]) => (
                 <div key={l}>
                   <span className="block font-mono text-2xl bg-gradient-to-br from-[#00E5CC] to-[#7B61FF] bg-clip-text text-transparent">{n}</span>
                   <span className="text-[#3A5070] text-xs tracking-widest uppercase font-mono">{l}</span>
@@ -76,42 +78,64 @@ export default function About() {
             style={{ opacity: rightVisible ? 1 : 0, transform: rightVisible ? "none" : "translateX(28px)", transitionDelay: "150ms" }}
           >
             <div className="relative w-full max-w-[380px] aspect-square">
-              {/* Outer ring */}
-              <div className="absolute inset-0 rounded-full border border-[#00E5CC]/10 animate-[spin_40s_linear_infinite]" />
-              <div className="absolute inset-[12%] rounded-full border border-[#7B61FF]/10 animate-[spin_28s_linear_infinite_reverse]" />
-              <div className="absolute inset-[24%] rounded-full border border-[#00C2FF]/10 animate-[spin_18s_linear_infinite]" />
+              {/* Outer rotating rings */}
+              <div className="absolute inset-0 rounded-full border border-[#00C2FF]/20 animate-[spin_40s_linear_infinite]" />
+              <div className="absolute inset-[8%] rounded-full border border-[#7B61FF]/15 animate-[spin_28s_linear_infinite_reverse]" />
+              <div className="absolute inset-[16%] rounded-full border border-[#00E5CC]/10 animate-[spin_18s_linear_infinite]" />
 
-              {/* Floating dots on rings */}
-              {[0, 60, 120, 180, 240, 300].map(deg => (
+              {/* Glowing dots on outer ring */}
+              {[0, 45, 90, 135, 180, 225, 270, 315].map(deg => (
                 <div
                   key={deg}
-                  className="absolute w-2 h-2 rounded-full bg-[#00E5CC] shadow-[0_0_8px_#00E5CC]"
+                  className="absolute w-1.5 h-1.5 rounded-full"
                   style={{
-                    top: `calc(50% + ${Math.sin(deg * Math.PI / 180) * 47}% - 4px)`,
-                    left: `calc(50% + ${Math.cos(deg * Math.PI / 180) * 47}% - 4px)`,
+                    background: deg % 90 === 0 ? "#00E5CC" : "#7B61FF",
+                    boxShadow: deg % 90 === 0 ? "0 0 8px #00E5CC" : "0 0 8px #7B61FF",
+                    top: `calc(50% + ${Math.sin(deg * Math.PI / 180) * 48}% - 3px)`,
+                    left: `calc(50% + ${Math.cos(deg * Math.PI / 180) * 48}% - 3px)`,
+                    opacity: 0.8,
+                  }}
+                />
+              ))}
+
+              {/* Second ring dots */}
+              {[30, 150, 270].map(deg => (
+                <div
+                  key={`inner-${deg}`}
+                  className="absolute w-1 h-1 rounded-full bg-[#00C2FF]"
+                  style={{
+                    boxShadow: "0 0 6px #00C2FF",
+                    top: `calc(50% + ${Math.sin(deg * Math.PI / 180) * 33}% - 2px)`,
+                    left: `calc(50% + ${Math.cos(deg * Math.PI / 180) * 33}% - 2px)`,
                     opacity: 0.6,
                   }}
                 />
               ))}
 
-              {/* Center card */}
-              <div className="absolute inset-[30%] rounded-2xl bg-gradient-to-br from-[#00E5CC]/10 to-[#7B61FF]/10 border border-[#00E5CC]/20 grid place-items-center backdrop-blur-sm">
-                <div className="text-center">
-                  <div className="text-3xl font-bold font-mono bg-gradient-to-br from-[#00E5CC] to-[#7B61FF] bg-clip-text text-transparent">Z</div>
-                  <div className="text-[9px] font-mono text-[#3A5070] tracking-widest uppercase mt-1">Labs</div>
-                </div>
+              {/* Center image */}
+              <div className="absolute inset-[22%] rounded-full overflow-hidden border-2 border-[#00E5CC]/40 shadow-[0_0_40px_rgba(0,229,204,0.2),0_0_80px_rgba(123,97,255,0.15)] z-10">
+                <Image
+                  src={ravanaLogo}
+                  alt="Ravana Tec Solutions"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
+
+              {/* Glow behind image */}
+              <div className="absolute inset-[22%] rounded-full bg-[#00C2FF]/10 blur-xl z-0" />
 
               {/* Orbit label chips */}
               {[
-                { label: "React", top: "4%",  left: "55%" },
-                { label: "AI",    top: "55%", left: "90%" },
-                { label: "UX",    top: "85%", left: "40%" },
-                { label: "Cloud", top: "40%", left: "2%"  },
+                { label: "React", top: "4%", left: "52%" },
+                { label: "AI", top: "52%", left: "90%" },
+                { label: "UX", top: "85%", left: "38%" },
+                { label: "Cloud", top: "38%", left: "0%" },
               ].map(chip => (
                 <div
                   key={chip.label}
-                  className="absolute font-mono text-[10px] px-2 py-1 rounded-md bg-white/[0.04] border border-[#00E5CC]/15 text-[#00E5CC] backdrop-blur-sm"
+                  className="absolute font-mono text-[10px] px-2 py-1 rounded-md bg-white/[0.04] border border-[#00E5CC]/20 text-[#00E5CC] backdrop-blur-sm z-20"
                   style={{ top: chip.top, left: chip.left }}
                 >
                   {chip.label}

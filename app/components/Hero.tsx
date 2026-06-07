@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import logo from "@/public/logo.png"
 
 interface Service { icon: string; label: string; }
 interface Stat { num: string; label: string; }
@@ -17,17 +19,17 @@ const services: Service[] = [
 const words: string[] = ["Innovate.", "Integrate.", "Elevate."];
 
 const STATS: Stat[] = [
-  { num: "8+",   label: "Years" },
-  { num: "120+", label: "Projects" },
-  { num: "35+",  label: "Experts" },
-  { num: "99%",  label: "Satisfaction" },
+  { num: "4+", label: "Years" },
+  { num: "20+", label: "Projects" },
+  { num: "10+", label: "Experts" },
+  { num: "99%", label: "Satisfaction" },
 ];
 
 const NAV_LINKS = [
-  { label: "About Us",   href: "#about" },
-  { label: "Services",   href: "#services" },
-  { label: "Projects",   href: "#projects" },
-  { label: "Founders",   href: "#founders" },
+  { label: "About Us", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Projects", href: "#projects" },
+  { label: "Founders", href: "#founders" },
 ];
 
 interface Drop { y: number; speed: number; opacity: number; len: number; color: string; chars: string[]; }
@@ -35,10 +37,10 @@ interface Particle { x: number; y: number; vx: number; vy: number; size: number;
 
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
-  const [visible, setVisible]     = useState(true);
-  const [menuOpen, setMenuOpen]   = useState(false);
+  const [visible, setVisible] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const rafRef    = useRef<number>(0);
+  const rafRef = useRef<number>(0);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -128,9 +130,16 @@ export default function Hero() {
       {/* ── Nav ── */}
       <nav className="relative z-20 flex items-center justify-between px-4 sm:px-8 lg:px-12 py-4 sm:py-5 border-b border-[#00E5CC]/10 animate-[fadeDown_0.7s_ease_both]">
         {/* Logo */}
+        {/* Logo */}
         <div className="flex items-center gap-2 font-mono text-sm sm:text-base tracking-wider">
-          <div className="w-7 h-7 rounded-md bg-gradient-to-br from-[#00E5CC] to-[#7B61FF] grid place-items-center text-xs font-bold text-[#030A10]">Z</div>
-          <span>Zer<span className="text-[#00E5CC]">0x</span>Labs</span>
+          <Image
+            src={logo}
+            alt="Ravana Tech Solutions Logo"
+            width={120}
+            height={52}
+            className="rounded-md"
+            priority
+          />
         </div>
 
         {/* Desktop links */}
@@ -195,7 +204,7 @@ export default function Hero() {
       <div className="relative z-[5] flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-8 pt-10 pb-20 sm:pt-14 sm:pb-24 gap-0">
         <div className="inline-flex items-center gap-2 border border-[#00E5CC]/20 bg-[#00E5CC]/5 rounded-full px-4 py-1.5 font-mono text-[10px] sm:text-xs tracking-widest text-[#00E5CC] uppercase mb-7 sm:mb-9 animate-[fadeUp_0.8s_0.1s_ease_both]">
           <span className="w-1.5 h-1.5 rounded-full bg-[#00E5CC] shadow-[0_0_6px_#00E5CC] animate-[blink_2s_infinite]" />
-          Trusted by 120+ global clients
+          Ravana Tech Solutions
         </div>
         <h1 className="font-bold leading-[1.05] tracking-tight mb-2 animate-[fadeUp_0.9s_0.2s_ease_both] text-[clamp(2.2rem,9vw,5.5rem)]">
           <span className="block text-[#E0EFFF]">We Build Digital</span>

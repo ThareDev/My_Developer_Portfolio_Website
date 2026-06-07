@@ -214,7 +214,7 @@ export default function Contact() {
           <span className="text-[#2A4060]">Zer<span className="text-[#00E5CC]">0x</span>Labs</span>
         </div>
         <p className="text-[#1A2D40] font-mono text-[10px] tracking-widest">
-          © {new Date().getFullYear()} Zer0xLabs. All rights reserved.
+          © {new Date().getFullYear()} Ravana Tech Solutions. All rights reserved.
         </p>
       </div>
 

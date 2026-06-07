@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
 import founder1 from "@/public/founder1.jpeg";
 import founder2 from "@/public/founder2.jpeg";
+import founder3 from "@/public/founder3.jpeg";
 
 interface Founder {
   name: string;
@@ -21,30 +22,44 @@ const FOUNDERS: Founder[] = [
   {
     name: "Tharaka Athuluwage",
     role: "CEO & Co-Founder",
-    bio: "Former engineering lead at Stripe and a Y Combinator alum, Tharaka brings 12 years of experience scaling products from zero to millions of users. He obsesses over system design and team culture in equal measure.",
+    bio: "Full-stack engineer with deep expertise in mobile and web development. Currently serving as Team Lead and Senior Software Engineer, Tharaka holds a degree in Information Technology specialized in Software Engineering — and doubles as Ravana Tech Solutions' AI/ML strategist.",
     img: founder1,
     objectPosition: "center 20%",
-    initials: "AM",
+    initials: "TA",
     accent: "#00E5CC",
     links: [
       { label: "LinkedIn", href: "#" },
       { label: "Twitter",  href: "#" },
     ],
-    tags: ["System Design", "Leadership", "Fintech", "YC Alum"],
+    tags: ["Mobile & Web Dev", "Team Lead", "SSE", "AI/ML Strategy", "IT Graduate"],
   },
   {
     name: "Chathil Mandinu",
-    role: "CTO & Co-Founder",
-    bio: "AI researcher turned builder, Chathil led ML infrastructure at DeepMind before co-founding Zer0xLabs. She architects the AI pipelines that power our clients' most ambitious products.",
+    role: "Co-Founder & Chief Business Officer",
+    bio: "The business engine behind Ravana Tech Solutions. Chathil drives investment strategy, brand partnerships, and social media growth — currently a 3rd-year Information Technology undergraduate with a sharp instinct for opportunity and an eye for what the market needs.",
     img: founder2,
     objectPosition: "center top",
-    initials: "PR",
+    initials: "CM",
     accent: "#7B61FF",
     links: [
       { label: "LinkedIn", href: "#" },
-      { label: "GitHub",   href: "#" },
+      { label: "Instagram", href: "#" },
     ],
-    tags: ["Machine Learning", "AI Infra", "Python", "ex-DeepMind"],
+    tags: ["Business Strategy", "Main Investor", "Social Media", "IT Undergraduate"],
+  },
+  {
+    name: "Kalpa Sahan",
+    role: "Co-Founder & Marketing Strategist",
+    bio: "A 4th-year Information Technology undergraduate with a sharp eye for brand storytelling and growth. Drives Ravana Tech Solutions' marketing strategy — turning complex technical products into compelling narratives that reach the right audience.",
+    img: founder3,
+    objectPosition: "center center",
+    initials: "MK",
+    accent: "#FF6B6B",
+    links: [
+      { label: "LinkedIn", href: "#" },
+      { label: "Twitter",  href: "#" },
+    ],
+    tags: ["Marketing Strategy", "Brand Storytelling", "IT Undergraduate", "Growth"],
   },
 ];
 
@@ -209,12 +224,12 @@ export default function Founders() {
   const { ref: headRef, visible: headVisible } = useInView();
 
   return (
-    <section id="founders" className="relative bg-[#030A10] text-[#E0EFFF] font-sans py-20 sm:py-28 px-4 sm:px-8 lg:px-16 overflow-hidden">
+    <section id="founders" className="relative bg-[#030A10] text-[#E0EFFF] font-sans py-20 sm:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Blobs */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] max-w-[550px] max-h-[550px] rounded-full bg-[#7B61FF]/[0.04] blur-[130px] pointer-events-none" />
       <div className="absolute top-0 left-0 w-[30vw] h-[30vw] max-w-[220px] max-h-[220px] rounded-full bg-[#00E5CC]/[0.05] blur-[80px] pointer-events-none" />
 
-      <div className="relative max-w-5xl mx-auto">
+      <div className="relative w-full">
         {/* Header */}
         <div
           ref={headRef}
@@ -235,7 +250,7 @@ export default function Founders() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-7">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
           {FOUNDERS.map((f, i) => <FounderCard key={f.name} founder={f} index={i} />)}
         </div>
 
@@ -248,7 +263,7 @@ export default function Founders() {
           <div className="relative">
             <div className="text-4xl text-[#00E5CC]/20 font-mono mb-4">&ldquo;</div>
             <p className="text-[#6A8AAA] text-base sm:text-lg font-light leading-relaxed max-w-[560px] mx-auto italic">
-              We started Zer0xLabs because we were tired of software that worked but didn&apos;t sing. Every product we ship should feel inevitable.
+              We started Ravana Tech Solutions because we were tired of software that worked but didn&apos;t sing. Every product we ship should feel inevitable.
             </p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <div className="flex -space-x-2">
@@ -262,7 +277,7 @@ export default function Founders() {
                   </div>
                 ))}
               </div>
-              <span className="text-[#2A4060] font-mono text-xs tracking-wide">Alex & Priya</span>
+              <span className="text-[#2A4060] font-mono text-xs tracking-wide">Tharaka & Chathil & Kalpa</span>
             </div>
           </div>
         </div>
