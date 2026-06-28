@@ -1,15 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-// ── App Router handler ────────────────────────────────────────────────────────
-// NOTE: This route uses FormData (multipart) instead of JSON so file
-// attachments can be forwarded directly to the team email.
-//
-// .env.local required:
-//   GMAIL_USER=ravanatecsolutions@gmail.com
-//   GMAIL_APP_PASSWORD=xxxx xxxx xxxx xxxx
-// ──────────────────────────────────────────────────────────────────────────────
-
 export async function POST(req: NextRequest) {
   try {
     const formData = await req.formData();
